@@ -3,10 +3,10 @@ class CreateFlowers < ActiveRecord::Migration[7.0]
     create_table :flowers do |t|
       t.references :user, null: false, foreign_key: true
       t.references :spot, null: false, foreign_key: true
-      t.string :name
-      t.integer :season
-      t.datetime :date
-      t.integer :status
+      t.string :name, null: false
+      t.integer :season, null: false
+      t.datetime :date, null: false
+      t.integer :status, null: false
       t.string :flower_word
       t.date :birth_flower
 

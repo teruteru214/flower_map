@@ -7,5 +7,6 @@ class CreateEvaluations < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    add_index :likes, [:user_id, :flower_id], unique: true
   end
 end
