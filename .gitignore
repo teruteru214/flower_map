@@ -29,6 +29,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# vendor/bundle配下のgemの管理を外すため
+vendor/bundle
 # フロントエンド側
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
