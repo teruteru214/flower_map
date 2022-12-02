@@ -34,14 +34,42 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem "rack-cors"
+gem "rack-cors"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "byebug", platforms: %i[ mri mingw x64_mingw ]
+  # Set up for development and test environments
+  gem 'sqlite3', '~> 1.4'
+  # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
+  gem 'factory_bot_rails'
+  gem 'pry-byebug'
+  gem 'rspec-rails'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem "spring"
+  # Ruby code style checking and code formatting tool
+  gem 'rubocop', require:false
+  gem 'rubocop-rails', require:false
+  # Provides a better error page
+  gem 'better_errors'
+  # Add a console to the error page
+  gem 'binding_of_caller'
+  # Detect vulnerable code
+  gem 'brakeman'
+  # help to kill N+1 queries and unused eager loading
+  gem 'bullet'
+  # APIとクライアント側を一つのコマンドで動かす為に導入する。
+  gem 'foreman'
+  # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
+  gem 'rails_admin'
+  gem 'letter_opener_web'
 end
+
+# User authentication
+gem 'sorcery'
+
+# Use it to create data
+gem 'faker'
